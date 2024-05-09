@@ -1,9 +1,6 @@
 Certainly! Below is the formatted README content that you can directly copy and paste into your `README.md` file on GitHub to ensure it renders properly:
 
 ```markdown
-## README
-
-This README provides the necessary commands to set up and run the Django project. Ensure you follow the steps in sequence for optimal setup.
 
 ### Making Changes to Models
 
