@@ -1,17 +1,17 @@
 ```markdown
-
+```
 ### Making Changes to Models
 
 After making any changes to `models.py`, perform the following steps:
 
-1. **Create Migrations**
+1. Create Migrations
    
    - python manage.py makemigrations
 
-2. **Apply Migrations**
+2. Apply Migrations
    
    - python manage.py migrate
-   
+   ```
 
 ### Importing Data
 
@@ -19,7 +19,7 @@ To import data into the database:
 
 - Ensure you're in the same directory as `manage.py`.
 - Run the following command:
-  ```bash
+  bash
   python3 manage.py import_csv
   ```
 
