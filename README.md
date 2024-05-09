@@ -10,7 +10,7 @@ After making any changes to `models.py`, perform the following steps:
 
 2. **Apply Migrations**
    
-   python manage.py migrate
+   - python manage.py migrate
    
 
 ### Importing Data
