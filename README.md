@@ -5,11 +5,11 @@
 After making any changes to `models.py`, perform the following steps:
 
 1. Create Migrations
-   
+   ```
    - python manage.py makemigrations
-
-2. Apply Migrations
-   
+   ```
+3. Apply Migrations
+   ```
    - python manage.py migrate
    ```
 
@@ -19,7 +19,7 @@ To import data into the database:
 
 - Ensure you're in the same directory as `manage.py`.
 - Run the following command:
-  bash
+  ```
   python3 manage.py import_csv
   ```
 
@@ -29,7 +29,7 @@ To start the Django development server:
 
 - Ensure you're in the same directory as `manage.py`.
 - Execute:
-  ```bash
+  ```
   python3 manage.py runserver
   ```
 
