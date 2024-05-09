@@ -21,20 +21,25 @@ class Command(BaseCommand):
         with open('tableApp/Sleep_health_and_lifestyle_dataset.csv', newline='', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
+                bp_values = row['Blood Pressure'].split('/')
+                systolic_bp = int(bp_values[0]) if len(bp_values) > 1 else 0  # Default to 0 if parsing fails
+                diastolic_bp = int(bp_values[1]) if len(bp_values) > 1 else 0
+
                 Person.objects.create(
-                    person_id=int(row['person_id']),
-                    gender=row['gender'],
-                    age=int(row['age']),
-                    occupation=row['occupation'],
-                    sleep_duration=float(row['sleep_duration']),
-                    quality_sleep=row['quality_sleep'].lower() in ['true', '1', 't', 'yes'],
-                    physical_activity_level=row['physical_activity_level'],
-                    stress_level=int(row['stress_level']),
-                    bmi_category=row['bmi_category'],
-                    blood_pressure=row['blood_pressure'],
-                    heart_rate=int(row['heart_rate']),
-                    daily_steps=int(row['daily_steps']),
-                    sleep_disorder=row['sleep_disorder'].lower() in ['true', '1', 't', 'yes'],
+                    person_id=int(row['Person ID']),
+                    gender=row['Gender'],
+                    age=int(row['Age']),
+                    occupation=row['Occupation'],
+                    sleep_duration=float(row['Sleep Duration']),
+                    quality_sleep=int(row['Quality of Sleep']),
+                    physical_activity_level=int(row['Physical Activity Level']),
+                    stress_level=int(row['Stress Level']),
+                    bmi_category=row['BMI Category'],
+                    systolic_bp=systolic_bp,
+                    diastolic_bp=diastolic_bp,
+                    heart_rate=int(row['Heart Rate']),
+                    daily_steps=int(row['Daily Steps']),
+                    sleep_disorder=row['Sleep Disorder'],
                     date_added=self.random_date(start_date, end_date)  # Set a random date
                 )
         self.stdout.write(self.style.SUCCESS('Successfully loaded data into database'))
