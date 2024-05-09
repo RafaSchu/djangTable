@@ -1,5 +1,3 @@
-Certainly! Below is the formatted README content that you can directly copy and paste into your `README.md` file on GitHub to ensure it renders properly:
-
 ```markdown
 
 ### Making Changes to Models
@@ -7,13 +5,13 @@ Certainly! Below is the formatted README content that you can directly copy and 
 After making any changes to `models.py`, perform the following steps:
 
 1. **Create Migrations**
-   ```bash
-   python manage.py makemigrations
-   ```
+   
+   - python manage.py makemigrations
+
 2. **Apply Migrations**
-   ```bash
+   
    python manage.py migrate
-   ```
+   
 
 ### Importing Data
 
